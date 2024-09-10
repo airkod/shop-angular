@@ -1,0 +1,9 @@
+$utilities: map-merge($utilities, (
+  "background-color-opacity": (
+    property: background-color,
+    class: bgc,
+    responsive: true,
+    state: hover,
+    values: $bootstrapColorsOpacity
+  )
+));

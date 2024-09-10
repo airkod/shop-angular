@@ -1,0 +1,16 @@
+$rotateOptions: ();
+@each $deg in fillStep(0, 360, 10) {
+  $rotateOptions: map-merge($rotateOptions, (
+    $deg: rotate(#{$deg}deg)
+  ));
+}
+
+$utilities: map-merge($utilities, (
+  "rotate": (
+    property: transform,
+    class: rot,
+    responsive: true,
+    state: hover,
+    values: $rotateOptions,
+  )
+));

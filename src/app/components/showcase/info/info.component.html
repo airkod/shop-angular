@@ -1,0 +1,13 @@
+<ng-container *ngIf="info && info.length">
+  <div class="container">
+    <div class="bc-gray-10 bw-1 justify-content-between br-5 d-flex gap-2 p-x-20 shd-soft">
+      <div class="flex-fill d-flex align-items-center p-y-15" *ngFor="let i of info;">
+        <i class="fs-60 pe-2 text-primary" [ms]="i.icon" [weight]="100"></i>
+        <div class="">
+          <div class="fs-7 fw-bold">{{i.title}}</div>
+          <div class="text-muted opacity-75">{{i.description}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

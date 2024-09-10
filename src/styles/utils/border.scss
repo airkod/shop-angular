@@ -1,0 +1,97 @@
+[class*="bc-"] {
+  border-style: solid;
+  border-width: 0;
+}
+
+$radiusOptions: fill(0, 31, px);
+
+$utilities: map-merge($utilities, (
+  "border-color": (
+    property: border-color,
+    class: bc,
+    responsive: true,
+    state: hover,
+    values: $bootstrapColorsOpacity
+  ),
+
+  "border-width": (
+    property: border-width,
+    class: bw,
+    responsive: true,
+    state: hover,
+    values: fill(0, 6, px)
+  ),
+  "border-width-top": (
+    property: border-top-width,
+    class: bw-t,
+    responsive: true,
+    state: hover,
+    values: fill(0, 6, px)
+  ),
+  "border-width-right": (
+    property: border-right-width,
+    class: bw-r,
+    responsive: true,
+    state: hover,
+    values: fill(0, 6, px)
+  ),
+  "border-width-bottom": (
+    property: border-bottom-width,
+    class: bw-b,
+    responsive: true,
+    state: hover,
+    values: fill(0, 6, px)
+  ),
+  "border-width-left": (
+    property: border-left-width,
+    class: bw-l,
+    responsive: true,
+    state: hover,
+    values: fill(0, 6, px)
+  ),
+
+  "border-raduis": (
+    property: border-radius,
+    class: br,
+    responsive: true,
+    state: hover,
+    values: $radiusOptions
+  ),
+  "border-raduis-top": (
+    property: border-top-left-radius border-top-right-radius,
+    class: br-top,
+    responsive: true,
+    state: hover,
+    values: $radiusOptions
+  ),
+  "border-raduis-right": (
+    property: border-top-right-radius border-bottom-right-radius,
+    class: br-right,
+    responsive: true,
+    state: hover,
+    values: $radiusOptions
+  ),
+  "border-raduis-bottom": (
+    property: border-bottom-right-radius border-bottom-left-radius,
+    class: br-bottom,
+    responsive: true,
+    state: hover,
+    values: $radiusOptions
+  ),
+  "border-raduis-left": (
+    property: border-top-left-radius border-bottom-left-radius,
+    class: br-left,
+    responsive: true,
+    state: hover,
+    values: $radiusOptions
+  ),
+  "border-raduis-circle": (
+    property: border-radius,
+    class: br,
+    responsive: true,
+    state: hover,
+    values: (
+      circle: 50%
+    )
+  )
+));

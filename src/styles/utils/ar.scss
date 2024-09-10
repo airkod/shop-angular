@@ -1,0 +1,17 @@
+$utilities: map-merge($utilities, (
+  "aspect-ratio": (
+    property: aspect-ratio,
+    class: ar,
+    responsive: false,
+    state: hover,
+    values: (
+      "1-1": 1 / 1,
+      "2-3": 2 / 3,
+      "3-2": 3 / 2,
+      "4-3": 4 / 3,
+      "3-4": 3 / 4,
+      "16-9": 16 / 9,
+      "9-16": 9 / 16,
+    )
+  )
+));

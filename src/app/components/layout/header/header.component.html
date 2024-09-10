@@ -1,0 +1,67 @@
+<div class="container d-flex align-items-center h-px-100" *ngIf="!fixed">
+  <a [nav]="Routes.home()">
+    <img class="logo" src="assets/img/logo.png">
+  </a>
+  <div class="flex-fill m-x-30">
+    <app-search></app-search>
+  </div>
+  <div class="d-flex">
+    <i class="fs-45 tc-primary" ms="headset_mic"></i>
+    <div class="m-l-5">
+      <div class="text-primary fs-8">Задать вопрос:</div>
+      <a class="fw-bold tc-primary-hover ls-m04">(063)1234567</a>
+    </div>
+  </div>
+  <a class="d-flex flex-column align-items-center m-l-25 tc-primary-hover">
+    <i class="fs-30 l-h-0 tc-primary" ms="favorite" badge="12"></i>
+    <span class="fs-9">Избранное</span>
+  </a>
+  <a class="d-flex flex-column align-items-center m-l-15 tc-primary-hover">
+    <i class="fs-30 text-primary" ms="person"></i>
+    <span class="fs-9">Аккаунт</span>
+  </a>
+  <a class="d-flex flex-column align-items-center m-l-15 tc-primary-hover">
+    <i class="fs-30 text-primary" ms="local_mall" [badge]="2"></i>
+    <span class="fs-9">Корзина</span>
+  </a>
+</div>
+
+<div class="h-px-175" *ngIf="fixed"></div>
+
+<div class="bw-t-1 bc-dark-10 w-100 bgc-white z-i-1000 top-0"
+     [class.position-fixed]="fixed"
+     [class.shd-soft]="fixed">
+
+  <div class="container">
+    <div class="d-flex h-px-75">
+      <div class="w-px-300">
+        <app-categories [isStatic]="isStatic"></app-categories>
+      </div>
+      <div class="flex-fill m-x-20">
+        <app-search [compact]="true" *ngIf="fixed"></app-search>
+        <div class="d-flex align-items-center gap-4 h-100 fw-bold fs-8" *ngIf="!fixed">
+          <a class="u-link anim-2 tc-primary-hover">О нас</a>
+          <a class="u-link anim-2 tc-primary-hover">Контакты</a>
+        </div>
+      </div>
+      <a *ngIf="!fixed" class="d-flex align-items-center fs-8 tc-primary-hover">
+        <i class="fs-30" ms="location_on"></i>
+        <span class="fw-bold">Отследить заказ</span>
+      </a>
+      <div class="d-flex align-items-center" *ngIf="fixed">
+        <a class="tc-primary-hover lh-1" tooltip="Отследить заказ" placement="bottom">
+          <i class="fs-30" ms="location_on"></i>
+        </a>
+        <a class="tc-primary-hover m-l-10 lh-1" tooltip="Избранное" placement="bottom" badge="12">
+          <i class="fs-30" ms="favorite"></i>
+        </a>
+        <a class="tc-primary-hover m-l-10 lh-1" tooltip="Аккаунт" placement="bottom">
+          <i class="fs-30" ms="person"></i>
+        </a>
+        <a class="tc-primary-hover m-l-10 lh-1" badge="1" tooltip="Перейти в корзину" placement="bottom">
+          <i class="fs-30 text-primary" ms="local_mall"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

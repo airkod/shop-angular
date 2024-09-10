@@ -1,0 +1,64 @@
+@import "vars";
+
+.non-static {
+  .dropdown {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-20px);
+
+    &.visible {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}
+
+.dropdown {
+
+  > .item {
+    // position: relative;
+
+    > a {
+      position: relative;
+
+      &:after {
+        position: absolute;
+        left: 5%;
+        bottom: 0;
+        content: ' ';
+        width: 90%;
+        height: 0.5px;
+        background: rgba($secondary, 0.3);
+      }
+
+      &:hover {
+        .accessory {
+          transform: translateX(5px);
+        }
+      }
+    }
+
+    > .sub-dropdown {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateX(-20px);
+      position: absolute;
+      width: calc(map-get($container-max-widths, xl) - 300px - 1.5rem);
+      left: 100%;
+      top: 0;
+
+      &.short {
+        width: 300px;
+      }
+    }
+
+    &:hover {
+      > .sub-dropdown {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+  }
+}

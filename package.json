@@ -1,0 +1,36 @@
+{
+  "name": "blankjs",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "ng serve",
+    "deploy": "ng build && git add . && git commit -am 'update' && git push"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^14.2.0",
+    "@angular/common": "^14.2.0",
+    "@angular/compiler": "^14.2.0",
+    "@angular/core": "^14.2.0",
+    "@angular/forms": "^14.2.0",
+    "@angular/platform-browser": "^14.2.0",
+    "@angular/platform-browser-dynamic": "^14.2.0",
+    "@angular/router": "^14.2.0",
+    "@ng-bootstrap/ng-bootstrap": "^10.0.0",
+    "bootstrap": "^5.2.2",
+    "express": "^4.18.2",
+    "keen-slider": "^6.8.6",
+    "mime": "^4.0.0",
+    "mmmagic": "^0.5.3",
+    "puppeteer": "^21.6.1",
+    "rxjs": "~7.5.0",
+    "swiper": "^8.4.4",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^14.2.4",
+    "@angular/cli": "~14.2.4",
+    "@angular/compiler-cli": "^14.2.0",
+    "typescript": "~4.7.2"
+  }
+}

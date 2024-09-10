@@ -1,0 +1,48 @@
+<ng-container *ngIf="category">
+  <div class="bgc-light">
+    <div class="container p-t-20">
+      <div class="d-flex">
+        <div class="w-px-300 flex-shrink-0">
+
+          <div class="p-b-20" *ngIf="category.categories.length">
+            <app-accordion [title]="category.title">
+              <div class="d-flex flex-column gap-3">
+                <a *ngFor="let category of category.categories"
+                   class="d-flex align-items-center tc-primary-hover"
+                   (click)="updateCategory(category)">
+                  <i class="m-r-10" [ms]="category.icon"></i>
+                  <span class="fs-8">{{category.title}}</span>
+                </a>
+              </div>
+            </app-accordion>
+          </div>
+
+          <div class="p-b-20" *ngIf="!category.categories.length && category.parent.categories.length">
+            <app-accordion [title]="category.parent.title">
+              <div class="d-flex flex-column gap-3">
+                <a *ngFor="let _category of category.parent.categories"
+                   class="d-flex align-items-center tc-primary-hover"
+                   [class.tc-primary]="_category.url === category.url"
+                   (click)="updateCategory(_category)">
+                  <i class="m-r-10" [ms]="_category.icon"></i>
+                  <span class="fs-8">{{_category.title}}</span>
+                </a>
+              </div>
+            </app-accordion>
+          </div>
+
+          <app-filter [selectedFilters]="request.filter"
+                      [filters]="category.filters"
+                      (change)="updateFilters($event)"></app-filter>
+        </div>
+        <div class="flex-fill m-l-20">
+          <div class="row gy-4" *ngIf="products">
+            <div class="col-6" *ngFor="let product of products">
+              <app-product-preview [product]="product"></app-product-preview>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

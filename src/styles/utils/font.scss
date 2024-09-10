@@ -1,0 +1,89 @@
+[class*="ml-"] {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+$utilities: map-merge($utilities, (
+  "font-size": (
+    property: font-size,
+    class: fs,
+    responsive: true,
+    state: hover,
+    values: map-merge(fill(16, 71, px), (
+      1: 26px,
+      2: 24px,
+      3: 22px,
+      4: 20px,
+      5: 18px,
+      6: 16px,
+      7: 15px,
+      8: 14px,
+      9: 13px,
+      10: 12px,
+    ))
+  ),
+  "letter-spacing": (
+    property: letter-spacing,
+    class: ls,
+    responsive: true,
+    state: hover,
+    values: (
+      "m2": -2px,
+      "m18": -1.8px,
+      "m16": -1.6px,
+      "m14": -1.4px,
+      "m12": -1.2px,
+      "m1": -1px,
+      "m08": -0.8px,
+      "m06": -0.6px,
+      "m04": -0.4px,
+      "m02": -0.2px,
+      "0": 0px,
+      "02": 0.2px,
+      "04": 0.4px,
+      "06": 0.6px,
+      "08": 0.8px,
+      "1": 1px,
+      "12": 1.2px,
+      "14": 1.4px,
+      "16": 1.6px,
+      "18": 1.8px,
+      "2": 2px
+    )
+  ),
+  "font-weight": (
+    property: font-weight,
+    class: fw,
+    responsive: true,
+    state: hover,
+    values: (
+      "bold": 700,
+      "regular": 400,
+      "thin": 200,
+      100: 100,
+      200: 200,
+      300: 300,
+      400: 400,
+      500: 500,
+      600: 600,
+      700: 700,
+      800: 800,
+      900: 900,
+    )
+  ),
+  "line-height": (
+    property: line-height,
+    class: lh,
+    responsive: true,
+    state: hover,
+    values: fill(0, 5, '')
+  ),
+  "max-lines": (
+    property: line-clamp -webkit-line-clamp,
+    class: ml,
+    responsive: true,
+    state: hover,
+    values: fill(0, 5, ''),
+  ),
+));

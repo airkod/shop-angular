@@ -1,0 +1,15 @@
+<div class="bgc-light" *ngIf="brands">
+  <div class="container">
+    <app-showcase-header [title]="brands.title">
+      <div class="row g-4">
+        <div class="col-4" *ngFor="let brand of brands.brands">
+          <a [nav]="Routes.brand(brand)"
+             class="shd-soft shd-medium-hover anim-2 tx-primary-hover d-flex justify-content-between flex-column bgc-white br-5 p-15">
+            <div class="w-100 ar-1-1" [bgImage]="brand.image" size="contain"></div>
+            <div class="ta-center">{{brand.title}}</div>
+          </a>
+        </div>
+      </div>
+    </app-showcase-header>
+  </div>
+</div>

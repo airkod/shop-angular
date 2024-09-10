@@ -1,0 +1,53 @@
+$options: fillStep(0, 101, 5, px);
+
+$utilities: map-merge($utilities, (
+  "margin": (
+    property: margin,
+    class: m,
+    responsive: true,
+    state: hover,
+    values: $options
+  ),
+  "margin-top": (
+    property: margin-top,
+    class: m-t,
+    responsive: true,
+    state: hover,
+    values: $options
+  ),
+  "margin-right": (
+    property: margin-right,
+    class: m-r,
+    responsive: true,
+    state: hover,
+    values: $options
+  ),
+  "margin-bottom": (
+    property: margin-bottom,
+    class: m-b,
+    responsive: true,
+    state: hover,
+    values: $options
+  ),
+  "margin-left": (
+    property: margin-left,
+    class: m-l,
+    responsive: true,
+    state: hover,
+    values: $options
+  ),
+  "margin-x": (
+    property: margin-left margin-right,
+    class: m-x,
+    responsive: true,
+    state: hover,
+    values: $options
+  ),
+  "margin-y": (
+    property: margin-top margin-bottom,
+    class: m-y,
+    responsive: true,
+    state: hover,
+    values: $options
+  ),
+));

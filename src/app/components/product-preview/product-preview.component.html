@@ -1,0 +1,24 @@
+<a class="d-inline-block w-100 h-100 shd-soft-hover anim-2 br-10 bc-gray-10 bw-1 bgc-white"
+   [nav]="Routes.product(product)" *ngIf="product"
+   [title]="product.title">
+  <div class="p-20 h-100 d-flex flex-column justify-content-between">
+    <div class="bgc-white p-b-20 d-flex justify-content-center position-relative">
+      <div class="w-100 ar-1-1" [bgImage]="product.image" size="contain"></div>
+      <div class="position-absolute anim-2 top-0 left-0 w-100 h-100 bg-primary-50 op-0 op-100-hover ta-right">
+        <app-icon-button icon="favorite" placement="left" title="Добавить в избранное"></app-icon-button>
+        <br>
+        <app-icon-button icon="search" placement="left" title="Быстрый просмотр"></app-icon-button>
+      </div>
+    </div>
+    <div class="ml-2 fs-8 m-b-5">{{product.title}}</div>
+    <div class="fs-9 tc-primary ls-m08">{{product.category.title}}</div>
+    <div class="d-flex align-items-center">
+      <div class="flex-fill">
+        <span class="fw-bold ls-m08 fs-8">{{product.price | price}}</span>
+        <div *ngIf="product.availability" class="ls-m08 fs-9 tc-success">В наличии</div>
+        <div *ngIf="!product.availability" class="ls-m08 fs-9 tc-dark-50">Нет в наличии</div>
+      </div>
+      <app-icon-button icon="shopping_bag" titleClicked="Добавлено" placement="left" title="Добавить в корзину"></app-icon-button>
+    </div>
+  </div>
+</a>

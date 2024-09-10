@@ -1,0 +1,34 @@
+@keyframes tip-appear-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.tip {
+  animation-name: tip-appear-animation;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+
+  z-index: 1000;
+  position: fixed;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 14px;
+  max-width: 200px;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+
+  @each $colorName, $colorValue in $bootstrapColors {
+    &.#{$colorName} {
+      background-color: var(--bs-#{$colorName});
+      color: var(--bs-#{$colorName}-bg-subtle);
+    }
+  }
+}

@@ -1,0 +1,62 @@
+<div class="bg-secondary-subtle h-100 w-100"
+     [class.non-static]="!isStatic"
+     (mouseleave)="isVisible = false"
+     (mouseenter)="isVisible = true">
+
+  <a class="d-flex align-items-center tc-primary-hover anim-2 h-100 w-100" (click)="isVisible = !isVisible" #categoriesRef>
+    <i class="m-l-15 m-r-10" ms="reorder"></i>
+    <span class="fs-7 lh-1 flex-fill fw-bold">Обзор товаров</span>
+    <i class="me-3 fs-5" ms="expand_more"></i>
+  </a>
+
+  <div class="dropdown anim-2 z-i-2 shd-soft bg-white br-bottom-5 position-relative" [class.visible]="isVisible">
+    <div class="item"
+         *ngFor="let category of categories"
+         [class.position-relative]="category.categories.length && !category.categories[0].categories.length">
+
+      <a class="d-flex align-items-center tc-primary-hover h-px-50" [nav]="Routes.catalog(category)">
+        <i class="m-l-15 m-r-10" [ms]="category.icon"></i>
+        <span class="fs-8 flex-fill text-capitalize text-lowercase">
+          {{category.title}}
+        </span>
+        <i class="me-3 fs-5 accessory anim-2" ms="navigate_next"></i>
+      </a>
+
+      <div class="sub-dropdown anim-2 w-px-300 bg-white shd-soft p-y-7"
+           *ngIf="category.categories.length && !category.categories[0].categories.length">
+        <div class="item" *ngFor="let category of category.categories">
+          <a class="d-flex align-items-center h-px-35 tc-primary-hover" [nav]="Routes.catalog(category)">
+            <i class="m-l-15 m-r-10" [ms]="category.icon"></i>
+            <span class="fs-8 flex-fill text-capitalize text-lowercase">
+              {{category.title}}
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="sub-dropdown bg-white anim-2 shd-soft br-right-5 position-absolute top-0"
+           *ngIf="category.categories.length && category.categories[0].categories.length">
+        <div class="row">
+          <div class="col-8" *ngFor="let category of category.categories">
+            <div class="p-x-10 p-b-10">
+              <a class="d-flex align-items-center fw-bold h-px-50 fs-8 border-bottom w-100 tc-primary-hover"
+                 [nav]="Routes.catalog(category)">
+                <i class="m-r-10" [ms]="category.icon"></i>
+                {{category.title}}
+              </a>
+              <a *ngFor="let category of category.categories"
+                 class="d-flex align-items-center tc-primary-hover mb-2 h-px-35 lh-1"
+                 [nav]="Routes.catalog(category)">
+                <i class="m-r-10" [ms]="category.icon"></i>
+                <span class="fs-8 flex-fill">
+                {{category.title}}
+              </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

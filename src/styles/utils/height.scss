@@ -1,0 +1,23 @@
+$utilities: map-merge($utilities, (
+  "height-percentage": (
+    property: height,
+    class: h,
+    responsive: true,
+    state: hover,
+    values: fill(0, 101, "%")
+  ),
+  "height-pixels": (
+    property: height,
+    class: h-px,
+    responsive: true,
+    state: hover,
+    values: $stepPxs
+  ),
+  "height-auto": (
+    property: height,
+    class: h,
+    responsive: true,
+    state: hover,
+    values: auto
+  )
+));

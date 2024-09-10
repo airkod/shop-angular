@@ -1,0 +1,23 @@
+$utilities: map-merge($utilities, (
+  "width-percentage": (
+    property: width,
+    class: w,
+    responsive: true,
+    state: hover,
+    values: fill(0, 101, "%")
+  ),
+  "width-pixels": (
+    property: width,
+    class: w-px,
+    responsive: true,
+    state: hover,
+    values: $stepPxs
+  ),
+  "width-auto": (
+    property: width,
+    class: w,
+    responsive: true,
+    state: hover,
+    values: auto
+  )
+));

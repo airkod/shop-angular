@@ -1,0 +1,26 @@
+<ng-container *ngIf="products">
+  <ng-container *ngFor="let product of products">
+    <div class="container">
+      <app-showcase-header [title]="product.title">
+
+        <div class="row">
+          <div class="col-6">
+            <a class="br-5 p-20 w-100 h-100 d-block"
+               [bgImage]="product.banner.image"
+               [nav]="product.banner.button.url">
+              <app-safe-html [content]="product.banner.content"></app-safe-html>
+            </a>
+          </div>
+          <div class="col-18">
+            <div class="row gx-4 gy-4">
+              <div class="col-6" *ngFor="let product of product.products">
+                <app-product-preview [product]="product"></app-product-preview>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </app-showcase-header>
+    </div>
+  </ng-container>
+</ng-container>

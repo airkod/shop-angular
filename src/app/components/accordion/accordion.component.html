@@ -1,0 +1,20 @@
+<div class="bgc-white br-5 shd-soft">
+  <div *ngIf="title"
+       class="h-px-75 p-x-20 bw-b-1 bc-dark-0 bc-dark-20 d-flex align-items-center justify-content-between anim-2"
+       [class.bc-dark-20]="opened"
+       role="button"
+       (click)="toggle()">
+
+    <span class="fw-bold fs-8">{{title}}</span>
+    <i ms="add" *ngIf="!opened"></i>
+    <i ms="remove" *ngIf="opened"></i>
+
+  </div>
+  <div class="anim-2 overflow-hidden" #contentRef>
+    <div class="overflow-y-auto" #subContentRef>
+      <div class="p-x-20 p-y-13">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

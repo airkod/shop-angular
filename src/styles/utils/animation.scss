@@ -1,0 +1,30 @@
+$values: (0: none);
+@for $i from 1 to 11 {
+  $value: $i / 10;
+  $values: map-merge($values, ($i: all #{$value}s ease-in-out));
+}
+
+$utilities: map-merge($utilities, (
+  "animation": (
+    property: transition,
+    class: anim,
+    responsive: true,
+    state: hover,
+    values: $values
+  )
+));
+
+@keyframes animation-in-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.anim-in-op-2 {
+  animation-name: animation-in-opacity;
+  animation-duration: 0.2s;
+  animation-iteration-count: 1;
+}

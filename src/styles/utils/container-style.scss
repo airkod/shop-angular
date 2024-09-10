@@ -1,0 +1,26 @@
+@each $colorName, $colorValue in $bootstrapColors {
+  .cs-#{$colorName} {
+    background-color: var(--bs-#{$colorName});
+    color: var(--bs-#{$colorName}-bg-subtle);
+  }
+
+  .cs-#{$colorName}-hover:hover {
+    background-color: var(--bs-#{$colorName});
+    color: var(--bs-#{$colorName}-bg-subtle);
+  }
+}
+
+@each $screenName, $screenValue in $container-max-widths {
+
+  @each $colorName, $colorValue in $bootstrapColors {
+    .cs-#{$screenName}-#{$colorName} {
+      background-color: var(--bs-#{$colorName});
+      color: var(--bs-#{$colorName}-bg-subtle);
+    }
+
+    .cs-#{$screenName}-#{$colorName}-hover:hover {
+      background-color: var(--bs-#{$colorName});
+      color: var(--bs-#{$colorName}-bg-subtle);
+    }
+  }
+}

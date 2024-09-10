@@ -1,0 +1,14 @@
+<swiper *ngIf="slider" [loop]="true" class="z-1" [autoplay]="false">
+  <ng-template swiperSlide *ngFor="let slide of slider;">
+    <div class="slide h-px-500 d-flex" [bgImage]="slide.backgroundImage">
+      <div class="container h-100 d-flex align-items-center" [bgImage]="slide.foregroundImage" side="right" size="contain">
+        <div>
+          <app-safe-html [content]="slide.content"></app-safe-html>
+          <div class="p-t-20">
+            <app-banner-button [button]="slide.button"></app-banner-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</swiper>

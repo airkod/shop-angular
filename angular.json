@@ -1,0 +1,126 @@
+{
+  "$schema" : "./node_modules/@angular/cli/lib/config/schema.json",
+  "version" : 1,
+  "newProjectRoot" : "projects",
+  "projects" : {
+    "artdevivre" : {
+      "projectType" : "application",
+      "schematics" : {
+        "@schematics/angular:component" : {
+          "inlineTemplate" : false,
+          "inlineStyle" : false,
+          "style" : "scss",
+          "skipTests" : true
+        },
+        "@schematics/angular:class" : {
+          "skipTests" : true
+        },
+        "@schematics/angular:directive" : {
+          "skipTests" : true
+        },
+        "@schematics/angular:guard" : {
+          "skipTests" : true
+        },
+        "@schematics/angular:interceptor" : {
+          "skipTests" : true
+        },
+        "@schematics/angular:pipe" : {
+          "skipTests" : true
+        },
+        "@schematics/angular:resolver" : {
+          "skipTests" : true
+        },
+        "@schematics/angular:service" : {
+          "skipTests" : true
+        }
+      },
+      "root" : "",
+      "sourceRoot" : "src",
+      "prefix" : "app",
+      "architect" : {
+        "build" : {
+          "builder" : "@angular-devkit/build-angular:browser",
+          "options" : {
+            "outputPath" : "dist/artdevivre",
+            "index" : "src/index.html",
+            "main" : "src/main.ts",
+            "polyfills" : "src/polyfills.ts",
+            "tsConfig" : "tsconfig.app.json",
+            "inlineStyleLanguage" : "scss",
+            "assets" : [
+              "src/favicon.ico",
+              "src/.htaccess",
+              "src/assets",
+            ],
+            "styles" : [
+              "src/styles.scss"
+            ],
+            "scripts" : [],
+            "stylePreprocessorOptions": {
+              "includePaths" : ["src/styles"]
+            }
+          },
+          "configurations" : {
+            "production" : {
+              "budgets" : [
+                {
+                  "type" : "initial",
+                  "maximumWarning" : "5mb",
+                  "maximumError" : "10mb"
+                },
+                {
+                  "type" : "anyComponentStyle",
+                  "maximumWarning" : "1mb",
+                  "maximumError" : "2mb"
+                }
+              ],
+              "fileReplacements" : [
+                {
+                  "replace" : "src/environments/environment.ts",
+                  "with" : "src/environments/environment.ts"
+                }
+              ],
+              "outputHashing" : "all"
+            },
+            "development" : {
+              "buildOptimizer" : false,
+              "optimization" : false,
+              "vendorChunk" : true,
+              "extractLicenses" : false,
+              "sourceMap" : true,
+              "namedChunks" : true,
+              "fileReplacements" : [
+                {
+                  "replace" : "src/environments/environment.ts",
+                  "with" : "src/environments/environment.development.ts"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration" : "production"
+        },
+        "serve" : {
+          "builder" : "@angular-devkit/build-angular:dev-server",
+          "configurations" : {
+            "production" : {
+              "browserTarget" : "artdevivre:build:production"
+            },
+            "development" : {
+              "browserTarget" : "artdevivre:build:development"
+            }
+          },
+          "defaultConfiguration" : "development"
+        },
+        "extract-i18n" : {
+          "builder" : "@angular-devkit/build-angular:extract-i18n",
+          "options" : {
+            "browserTarget" : "artdevivre:build"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "4548f4c3-12c8-4d4e-98ca-5d0837e0c536"
+  }
+}

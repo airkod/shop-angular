@@ -1,0 +1,21 @@
+$utilities: map-merge($utilities, (
+  "text-color": (
+    property: color,
+    class: tc,
+    responsive: true,
+    state: hover,
+    values: $bootstrapColorsOpacity
+  ),
+  "text-align": (
+    property: text-align,
+    class: ta,
+    responsive: true,
+    state: hover,
+    values: (
+      left,
+      center,
+      right,
+      justify
+    )
+  )
+));

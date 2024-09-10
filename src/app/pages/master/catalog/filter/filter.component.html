@@ -1,0 +1,20 @@
+<ng-container *ngIf="filters">
+
+  <div class="p-b-20" *ngFor="let filter of filters; let filterIndex = index;">
+
+    <app-accordion [title]="filter.title" [maxHeight]="400" [opened]="filterIndex < 5">
+
+      <div class="d-flex align-items-center lh-1 p-y-5" *ngFor="let value of filter.values"
+           [title]="value"
+           (click)="setFilter(filter, value)"
+           role="button">
+        <i ms="check_box_outline_blank" *ngIf="!isFilterValueSelected(filter, value)"></i>
+        <i class="tc-primary" ms="check_box" [fill]="true" *ngIf="isFilterValueSelected(filter, value)"></i>
+        <span class="m-l-5 fs-8 ml-1">{{value}}</span>
+      </div>
+
+    </app-accordion>
+
+  </div>
+
+</ng-container>

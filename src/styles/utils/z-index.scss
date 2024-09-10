@@ -1,0 +1,9 @@
+$utilities: map-merge($utilities, (
+  "z-index": (
+    property: z-index,
+    class: z-i,
+    responsive: false,
+    state: hover,
+    values: map-merge(fill(0, 11, ''), fill(1000, 1051, ''))
+  )
+));

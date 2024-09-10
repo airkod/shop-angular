@@ -1,0 +1,12 @@
+<div class="container" *ngIf="banners">
+  <div class="row">
+    <div *ngFor="let banner of banners;" class="col-{{Math.round(24 / banners.length)}}">
+      <a class="shd-soft shd-medium-hover p-20 h-100 w-100 br-5 d-inline-flex anim-2"
+         [bgImage]="banner.image"
+         [title]="banner.button.title"
+         [nav]="banner.button.url">
+        <app-safe-html [content]="banner.content"></app-safe-html>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+$options: fill(0, 101, px);
+
+$utilities: map-merge($utilities, (
+  "padding": (
+    property: padding,
+    class: p,
+    responsive: true,
+    state: hover,
+    values: $options
+  ),
+  "padding-top": (
+    property: padding-top,
+    class: p-t,
+    responsive: true,
+    state: hover,
+    values: $options
+  ),
+  "padding-right": (
+    property: padding-right,
+    class: p-r,
+    responsive: true,
+    state: hover,
+    values: $options
+  ),
+  "padding-bottom": (
+    property: padding-bottom,
+    class: p-b,
+    responsive: true,
+    state: hover,
+    values: $options
+  ),
+  "padding-left": (
+    property: padding-left,
+    class: p-l,
+    responsive: true,
+    state: hover,
+    values: $options
+  ),
+  "padding-x": (
+    property: padding-left padding-right,
+    class: p-x,
+    responsive: true,
+    state: hover,
+    values: $options
+  ),
+  "padding-y": (
+    property: padding-top padding-bottom,
+    class: p-y,
+    responsive: true,
+    state: hover,
+    values: $options
+  ),
+));

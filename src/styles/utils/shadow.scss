@@ -1,0 +1,21 @@
+$shadowIntense: (
+  soft: 0 0 30px -10px rgba(0, 0, 0, 0.2),
+  medium: 0 0 20px 0 rgba(0, 0, 0, 0.2),
+  hard: 0 0 20px 10px rgba(0, 0, 0, 0.2)
+);
+
+@each $shadow in fillStep(0, 101, 5) {
+  $shadowIntense: map-merge($shadowIntense, (
+    $shadow: 0 0 #{$shadow}px 0 rgb(0 0 0 / 20%)
+  ));
+}
+
+$utilities: map-merge($utilities, (
+  "box-shadow": (
+    property: box-shadow,
+    class: shd,
+    responsive: true,
+    state: hover,
+    values: $shadowIntense
+  )
+));

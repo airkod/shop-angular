@@ -1,0 +1,10 @@
+<div class="position-relative z-i-1000 h-100 d-flex align-items-center">
+  <div class="br-10 bgc-white bw-2 p-10 d-flex align-items-center w-100"
+       [class.p-y-5]="compact"
+       [class.bc-primary]="!compact"
+       [class.bc-primary-50]="compact">
+
+    <input class="p-0 bw-0 w-100 m-r-10" placeholder="Пошук..." (focus)="showBackdrop()" (blur)="hideBackdrop()">
+    <i role="button" ms="search"></i>
+  </div>
+</div>

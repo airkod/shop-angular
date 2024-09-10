@@ -1,0 +1,35 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:math";
+
+@function fill($from, $to, $units: false) {
+  $options: ();
+  @for $i from $from to $to {
+
+    @if ($units) {
+      $options: map.merge($options, (
+        $i: #{$i}#{$units}
+      ));
+    }
+    @else {
+      $options: list.append($options, $i);
+    }
+  }
+  @return $options;
+}
+
+@function fillStep($from, $count, $step, $units: false) {
+  $options: ();
+  @for $i from $from to math.ceil($count / $step) {
+
+    @if ($units) {
+      $options: map.merge($options, (
+        $i * $step: #{$i * $step}#{$units}
+      ));
+    }
+    @else {
+      $options: list.append($options, $i * $step);
+    }
+  }
+  @return $options;
+}

@@ -1,0 +1,15 @@
+<div class="bg-light" *ngIf="categories && categories.categories">
+  <div class="container">
+    <app-showcase-header [title]="categories.title">
+      <div class="row g-4">
+        <div class="col-lg-4" *ngFor="let category of categories.categories">
+          <a [nav]="Routes.catalog(category)"
+             class="shd-soft shd-medium-hover tc-primary-hover anim-2 d-flex justify-content-between flex-column bgc-white br-5 p-15">
+            <div class="w-100 ar-1-1 m-b-20" [bgImage]="category.image" size="contain"></div>
+            <div class="ta-center fs-8">{{category.title}}</div>
+          </a>
+        </div>
+      </div>
+    </app-showcase-header>
+  </div>
+</div>
